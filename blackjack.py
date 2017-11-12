@@ -4,46 +4,38 @@ cards = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 1
 
 card_list = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
 
-dealer = []
-player = []
-game = True
-
 def pick_card():
     card = random.choice(card_list)
     return card
 
+dealer = []
+player = []
 dealer_card = pick_card()
 player_card = pick_card()
+dealer_card2 = pick_card()
+player_card2 = pick_card()
+print('Dealer draws: %s' % dealer_card)
+print('Player draws: ' + player_card + ' and ' + player_card2)
 
-while(game):
-    if sum(dealer)  <=10:
-        if dealer_card == 'A':
-            dealer.append(cards[dealer_card][1])
+def add_values(card, values):
+    if sum(values)  <= 10:
+        if card == 'A':
+            values.append(cards['A'][1])
         else:
-            dealer.append(cards[dealer_card])
+            values.append(cards[card])
     else:
-        if dealer_card == 'A':
-            dealer.append(cards[dealer_card][0])
+        if card == 'A':
+            values.append(cards['A'][0])
         else:
-            dealer.append(cards[dealer_card])
+            values.append(cards[card])
 
-    if sum(player) <= 10:
-        if player_card == 'A':
-            player.append(cards[player_card][1])
-        else:
-            player.append(cards[player_card])
-    else:
-        if player_card == 'A':
-            player.append(cards[player_card][0])
-        else:
-            player.append(cards[player_card])
+add_values(dealer_card, dealer)
+add_values(dealer_card2, dealer)
+add_values(player_card, player)
+add_values(player_card2, player)
+print('Player showing: ', sum(player))
 
-    print('Dealer draws: ', dealer_card)
-    print('Dealer total: ', sum(dealer))
-    print('Player draws: ', player_card)
-    print('Player total: ', sum(player))
-    game = False
 
-    #hit = input('Player hits? y/n')
-    #if hit == 'y' or 'Y':
-    #    player_card = pick_card()
+#hit = input('Player hits? y/n')
+#if hit == 'y' or 'Y':
+#    player_card = pick_card()
