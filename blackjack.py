@@ -36,7 +36,7 @@ add_values(player_card, player)
 add_values(player_card2, player)
 print('Player showing: ', sum(player))
 while(game):
-    if sum(dealer) != 21 or sum(player) != 21:
+    if sum(dealer) != 21 and sum(player) != 21:
         hit = input('Player hits? (y/n) ')
         if hit == 'y':
             player_card = pick_card()
@@ -44,8 +44,14 @@ while(game):
             print('Player draws: ', player_card)
             print('Player showing: ', sum(player))
             if sum(player) > 21:
-                print('Player busts! Dealer wins!')
-                break
+                if 11 in player:
+                    player.remove(11)
+                    player.append(1)
+                    print('Switching Ace value to 1')
+                    print('Player showing: ', sum(player))
+                else:
+                    print('Player busts! Dealer wins!')
+                    break
             elif sum(player) == 21:
                 print('Blackjack! Player wins')
                 break
@@ -59,17 +65,20 @@ while(game):
                     add_values(dealer_card, dealer)
                     print('Dealer showing: ', sum(dealer))
                     if sum(dealer) > 21:
-                        print('Dealer busts! Player wins!')
-                        game = False
-                        break
+                        if 11 in dealer:
+                            dealer.remove(11)
+                            dealer.append(1)
+                            print('Switching Ace value to 1')
+                            print('Dealer showing: ', sum(dealer))
+                        else:
+                            print('Dealer busts! Player wins!')
+                            game = False
                     elif sum(dealer) == 21:
                         print('Blackjack! Dealer wins')
                         game = False
-                        break
                     elif sum(dealer) >= sum(player):
                         print('Dealer wins!')
                         game = False
-                        break
         else:
             print('Invalid input. Try again')
 
