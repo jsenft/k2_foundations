@@ -2,7 +2,7 @@ import random
 
 cards = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': (1, 11)}
 
-card_list = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+card_list = list(cards.keys())
 
 game = True
 def pick_card():
@@ -88,6 +88,5 @@ while(game):
             print('Blackjack! Dealer wins!')
             game = False
         else:
-            print("Player's 2nd card: %s" % dealer_card2)
             print('Blackjack! Player wins!')
             game = False
