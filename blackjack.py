@@ -50,10 +50,10 @@ while(game):
                     print('Switching Ace value to 1')
                     print('Player showing: ', sum(player))
                 else:
-                    print('Player busts! Dealer wins!')
+                    print('Player busts. Dealer wins')
                     break
             elif sum(player) == 21:
-                print('Blackjack! Player wins')
+                print('Blackjack! Player wins!')
                 break
         elif hit == 'n':
             if sum(player) > sum(dealer):
@@ -71,13 +71,13 @@ while(game):
                             print('Switching Ace value to 1')
                             print('Dealer showing: ', sum(dealer))
                         else:
-                            print('Dealer busts! Player wins!')
+                            print('Dealer busts. Player wins!')
                             game = False
                     elif sum(dealer) == 21:
                         print('Blackjack! Dealer wins')
                         game = False
                     elif sum(dealer) >= sum(player):
-                        print('Dealer wins!')
+                        print('Dealer wins')
                         game = False
         else:
             print('Invalid input. Try again')
@@ -85,7 +85,7 @@ while(game):
     else:
         if sum(dealer) == 21:
             print("Dealer's 2nd card: %s" % dealer_card2)
-            print('Blackjack! Dealer wins!')
+            print('Blackjack! Dealer wins')
             game = False
         else:
             print('Blackjack! Player wins!')
