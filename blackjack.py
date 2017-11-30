@@ -3,7 +3,6 @@ import random
 cards = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
 
 card_list = list(cards.keys())
-game = True
 
 def pick_card():
     card = random.choice(card_list)
@@ -33,7 +32,7 @@ player_score = total_cards(player)
 dealer_score = total_cards(dealer)
 print('Player showing: ', player_score)
 
-#Player interaction logic
+# Player interaction logic
 while(player_score < 21):
     hit = input('Player hits? (y/N) ')
     if hit == 'y':
@@ -48,7 +47,7 @@ while(player_score < 21):
 if player_score > 21:
     print('Player busts. Dealer wins')
 
-#Dealer response and game outcome resolution
+# Dealer response and game outcome resolution
 else:
     print("Dealer's 2nd card: %s" % dealer_card2)
     print('Dealer showing: ', dealer_score)
