@@ -9,5 +9,11 @@
 5. Dealer draws until showing at least 17, busts, or beats player's score.
 6. Ties are called a push.
 
+* us_births/births.ipynb - A Jupyter notebook with some very basic data exploration. Launch in a command line with:
+$ jupyter notebook births.ipynb
+
+* gun_deaths/deaths.ipynb - A Jupyter notebook with additional data exploration. Launch in a command line with:
+$ jupyter notebook deaths.ipynb
+
 ## About
-This project is part of the pre-work program for the K2 Data Science program.
+These projects are part of the pre-work program for the K2 Data Science program.
