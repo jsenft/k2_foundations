@@ -11,13 +11,19 @@ Blackjack game written from scratch in python, the notebooks for the other topic
 6. Ties are called a push.
 
 * us_births/births.ipynb - A Jupyter notebook with some very basic data exploration. Launch in a command line with:
-`$ jupyter notebook births.ipynb`
+```
+$ jupyter notebook births.ipynb
+```
 
 * gun_deaths/deaths.ipynb - A Jupyter notebook with additional data exploration. Launch in a command line with:
-`$ jupyter notebook deaths.ipynb`
+```
+$ jupyter notebook deaths.ipynb
+```
 
 * titanic/titanic.ipynb - A Jupyter notebook with more data exploration. Launch in a command line with:
-`$ jupyter notebook titanic.ipynb`
+```
+$ jupyter notebook titanic.ipynb
+```
 
 ## About
 These projects are part of the pre-work content for the K2 Data Science program.
